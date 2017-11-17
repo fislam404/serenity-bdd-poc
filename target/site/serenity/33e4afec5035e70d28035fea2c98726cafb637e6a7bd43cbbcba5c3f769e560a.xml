@@ -1,0 +1,31 @@
+<acceptance-test-run title="Log in PUC" name="logInPUC" steps="4" successful="4" failures="0" skipped="0" ignored="0" pending="0" result="SUCCESS" duration="9293" timestamp="2017-11-16T16:14:23.435-05:00" session-id="6846d2bd33e6abd2fa113e88a201d30d" test-source="JUnit">
+  <user-story id="com.pentaho.analyzer.PAZ_AddFields_Test" name="Paz  add fields  test" path="com.pentaho.analyzer"/>
+  <tags>
+    <tag name="Paz  add fields  test" type="story"/>
+  </tags>
+  <test-step result="SUCCESS" duration="4469">
+    <screenshots>
+      <screenshot image="a552aad747f92db6afeffefe1623970e.png"/>
+    </screenshots>
+    <description>Given ^Admin is on the loginpage$</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="723">
+    <screenshots>
+      <screenshot image="a241154810b01a60dd6af6663fe5b1af.png"/>
+      <screenshot image="e53e9f9f0176412e7d6a267d4675bb89.png"/>
+    </screenshots>
+    <description>Admin enters valid username</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="616">
+    <screenshots>
+      <screenshot image="1f51fe2da01675cf16699b087a408d67.png"/>
+    </screenshots>
+    <description>Admin enters valid password</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="3402">
+    <screenshots>
+      <screenshot image="31f51e445131b7bf024cae8613a5dea6.png"/>
+    </screenshots>
+    <description>Admin press  login</description>
+  </test-step>
+</acceptance-test-run>
