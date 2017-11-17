@@ -37,7 +37,6 @@ public class LoginStepDefinition {
   @Step
   @Then("^Admin should successfully logged in$")
   public void admin_should_successfully_logged_in() {
-    
   }
 
 }

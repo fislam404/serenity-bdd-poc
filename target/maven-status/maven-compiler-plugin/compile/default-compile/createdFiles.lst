@@ -1,0 +1,4 @@
+feature\step\definition\LoginStepDefinition.class
+ui\HomePage.class
+ui\LoginPage.class
+feature\step\definition\CreateAnalyzerReportStepDefinition.class

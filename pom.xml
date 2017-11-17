@@ -11,29 +11,34 @@
     <name>Serenity project with JUnit and WebDriver</name>
 
  	    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serenity.version>1.7.2</serenity.version> <!-- https://bintray.com/serenity/maven/serenity-core/ -->
-        <serenity.maven.version>1.7.2</serenity.maven.version>
-        <serenity.cucumber.version>1.6.4</serenity.cucumber.version> <!--  https://bintray.com/serenity/maven/serenity-cucumber/ -->
-    </properties>
-
-    <!-- Define the Bintray repos for convenience -->
-    <repositories>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <serenity.version>1.7.4</serenity.version>
+    <serenity.maven.version>1.7.4</serenity.maven.version>
+    <serenity.cucumber.version>1.6.4</serenity.cucumber.version>
+  </properties>
+  
+      <repositories>
         <repository>
-            <id>serenity</id>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
             <name>bintray</name>
-            <url>http://dl.bintray.com/serenity/maven</url>
+            <url>http://jcenter.bintray.com</url>
         </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <id>serenity</id>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
             <name>bintray-plugins</name>
-            <url>http://dl.bintray.com/serenity/maven</url>
+            <url>http://jcenter.bintray.com</url>
         </pluginRepository>
     </pluginRepositories>
 
-    <dependencies>
+  <dependencies>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
@@ -46,7 +51,12 @@
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-rest-assured</artifactId>
+            <artifactId>serenity-screenplay</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-screenplay-webdriver</artifactId>
             <version>${serenity.version}</version>
         </dependency>
         <dependency>
@@ -54,15 +64,10 @@
             <artifactId>serenity-cucumber</artifactId>
             <version>${serenity.cucumber.version}</version>
         </dependency>
-        <dependency>
+         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
-            <version>1.8.6</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -74,64 +79,34 @@
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>3.6.2</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
             <version>1.3</version>
         </dependency>
-    </dependencies>
-    <build>
+  </dependencies>
+  <build>
         <plugins>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>1.4</version>
-                <executions>
-                    <execution>
-                        <id>enforce</id>
-                        <configuration>
-                            <rules>
-                                <requireUpperBoundDeps/>
-                            </rules>
-                        </configuration>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.18</version>
+                <version>2.20</version>
                 <configuration>
                     <skip>true</skip>
                 </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.20</version>
+                <version>2.20.1</version>
                 <configuration>
                     <includes>
-                        <include>**/cucumber/junit/**/*.java</include>
-                        <include>**/cucumber/*.java</include>
+                        <include>**/*Test.java</include>
+                        <include>**/Test*.java</include>
+                        <include>**/*TestSuite.java</include>
+                        <include>**/When*.java</include>
                     </includes>
-                    <reuseForks>true</reuseForks>
-                    <!--<forkCount>2</forkCount>-->
-                    <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                 </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -146,13 +121,9 @@
                 <groupId>net.serenity-bdd.maven.plugins</groupId>
                 <artifactId>serenity-maven-plugin</artifactId>
                 <version>${serenity.maven.version}</version>
-                <dependencies>
-                  <dependency>
-                    <groupId>net.serenity-bdd</groupId>
-                    <artifactId>serenity-core</artifactId>
-                    <version>${serenity.version}</version>
-                  </dependency>
-                </dependencies>
+                <configuration>
+                  <tags>${tags}</tags>
+                </configuration>
                 <executions>
                     <execution>
                         <id>serenity-reports</id>
