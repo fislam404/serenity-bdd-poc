@@ -25,4 +25,10 @@ public class LoginPage extends PageObject {
   public void clinkOnLoginButton(){
     loginButton.click();
   }
+  
+  public void login(String userName, String Password){
+    userNameField.sendKeys( userName );
+    passwordField.sendKeys( Password );
+    loginButton.click();
+  }
 }

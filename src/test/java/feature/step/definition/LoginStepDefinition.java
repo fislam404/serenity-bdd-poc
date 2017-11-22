@@ -3,10 +3,14 @@ package feature.step.definition;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import junit.framework.Assert;
 import net.thucydides.core.annotations.Step;
+import net.thucydides.core.annotations.Steps;
 import ui.LoginPage;
 
 public class LoginStepDefinition {
+  
+  @Steps
   LoginPage loginPage;
 
   
@@ -37,6 +41,7 @@ public class LoginStepDefinition {
   @Step
   @Then("^Admin should successfully logged in$")
   public void admin_should_successfully_logged_in() {
+    Assert.assertEquals( "Pentaho User Console", loginPage.getTitle() );
   }
 
 }
