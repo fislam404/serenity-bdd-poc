@@ -23,7 +23,7 @@ public class CreateAnalyzerReportStepDefinition {
 
   @When("^Admin choose new Analysis report$")
   public void admin_choose_new_Analysis_report(){
-    homepage.clinkCreateNew();
+    homepage.clickCreateNew();
     homepage.clinkCreateNewAnalyzerReport();
   }
 

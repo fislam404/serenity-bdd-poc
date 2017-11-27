@@ -1,2 +1,2 @@
-User Name,Password
-Admin,password
+User Name,Password,Datasource Name,Analyzer Report Tab Name,Field Name,Layout To DnD,Field TO Dnd
+Admin,password,SteelWheels: SteelWheelsSales,Analysis Report,Country;City;Vendor;Type,Measures,Quantity;Sales

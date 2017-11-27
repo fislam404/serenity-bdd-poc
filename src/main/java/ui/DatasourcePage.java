@@ -67,7 +67,8 @@ public class DatasourcePage extends PageObject {
   }
   
   public void clickOnOkButton(){
-    buttonOK.click();
+    evaluateJavascript( "arguments[0].click()", buttonOK );
+    //buttonOK.click();
   }
   
 }
