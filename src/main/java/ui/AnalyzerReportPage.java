@@ -5,7 +5,6 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-import junit.framework.Assert;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 
@@ -100,8 +99,7 @@ public class AnalyzerReportPage extends PageObject {
 
   public void verifyAnalyzerReportTab( String expectedTabName ) {
     getDriver().switchTo().defaultContent();
-    // analysisReportTab.shouldContainText( expectedTabName );
-    Assert.assertEquals( expectedTabName, analysisReportTab.getText() );
+    analysisReportTab.shouldContainText( expectedTabName );
   }
 
   public void verifyRowHeader( List<String> pivotTableRowTitle ) {
