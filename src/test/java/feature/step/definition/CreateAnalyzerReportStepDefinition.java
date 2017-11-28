@@ -16,7 +16,7 @@ public class CreateAnalyzerReportStepDefinition {
 
   @Given("^Admin is o the file menu$")
   public void admin_is_o_the_file_menu(){
-    homepage.clinkOnfielMenu();
+    //homepage.clinkOnfielMenu();
     //homepage.clinkCreateNew();
   }
 

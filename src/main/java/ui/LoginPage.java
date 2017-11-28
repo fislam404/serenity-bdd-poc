@@ -7,26 +7,28 @@ import net.serenitybdd.core.pages.PageObject;
 
 public class LoginPage extends PageObject {
 
-  @FindBy(id="eval-arrow")
+  @FindBy( id = "eval-arrow" )
   private WebElement evaluator;
-  @FindBy(id="j_username")
+  @FindBy( id = "j_username" )
   private WebElement userNameField;
-  @FindBy(id="j_password")
+  @FindBy( id = "j_password" )
   private WebElement passwordField;
-  @FindBy(xpath = "//button[@type = 'submit']")
+  @FindBy( xpath = "//button[@type = 'submit']" )
   private WebElement loginButton;
-  
-  public void enterUserName(){
+
+  public void enterUserName() {
     userNameField.sendKeys( "Admin" );
   }
-  public void enterPassword(){
+
+  public void enterPassword() {
     passwordField.sendKeys( "password" );
   }
-  public void clinkOnLoginButton(){
+
+  public void clinkOnLoginButton() {
     loginButton.click();
   }
-  
-  public void login(String userName, String Password){
+
+  public void login( String userName, String Password ) {
     userNameField.sendKeys( userName );
     passwordField.sendKeys( Password );
     loginButton.click();

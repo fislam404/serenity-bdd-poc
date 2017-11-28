@@ -1,4 +1,4 @@
-package com.pentaho.analyzer;
+package demoAnalyzer;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

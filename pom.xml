@@ -108,8 +108,17 @@
 						<include>**/Test*.java</include>
 						<include>**/*TestSuite.java</include>
 						<include>**/When*.java</include>
+						<include>**/analyzer/junit/**/*.java</include>
 					</includes>
 				</configuration>
+				<executions>
+					<execution>
+						<goals>
+						<goal>integration-test</goal>
+						<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

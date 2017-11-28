@@ -33,10 +33,14 @@ public class PAZ_POC_Test {
   WebDriver browser;
 
   private String userName, password, datasourceName, analyzerReportTabName, fieldName, layoutToDnD, fieldToDnd;
-  private List<String> rowTitles = Arrays.asList( "Country", "City", "Vendor", "Type");
-  private List<String> columnTitles = Arrays.asList("Quantity", "Sales");
-  public void setUserName( String username ) {
-    this.userName = username;
+  private List<String> rowTitles = Arrays.asList( "Country", "City", "Vendor", "Type" );
+  private List<String> columnTitles = Arrays.asList( "Quantity", "Sales" );
+
+  /*
+   * The columns in the CSV files are converted to camel-case property names (so for example User Name becomes userName)
+   */
+  public void setUserName( String userName ) {
+    this.userName = userName;
   }
 
   public void setPassword( String password ) {
