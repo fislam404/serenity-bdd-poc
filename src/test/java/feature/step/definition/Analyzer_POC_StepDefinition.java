@@ -14,13 +14,10 @@ import ui.LoginPage;
 
 public class Analyzer_POC_StepDefinition {
 
-  @Steps
+  
   LoginPage loginPage;
-  @Steps
   HomePage homepage;
-  @Steps
   DatasourcePage datasourcePage;
-  @Steps
   AnalyzerReportPage analyzerReportPage;
 
   @Given( "^Admin is logged in as a valid user$" )

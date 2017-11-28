@@ -2,6 +2,7 @@ package ui;
 
 import java.util.List;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 import junit.framework.Assert;
@@ -9,6 +10,10 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 
 public class AnalyzerReportPage extends PageObject {
+  
+  public AnalyzerReportPage( WebDriver driver ) {
+    super( driver );
+  }
 
   @FindBy( css = "#fieldListTreeContent > .folderContent > .field" )
   protected List<WebElementFacade> fieldFieldItems;

@@ -2,6 +2,7 @@ package ui;
 
 import java.util.List;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -12,6 +13,10 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 public class DatasourcePage extends PageObject {
 
+  public DatasourcePage( WebDriver driver ) {
+    super( driver );
+  }
+  
   @FindBy(css="#datasources option")
   private WebElementFacade datasourceDropdown;
   

@@ -1,6 +1,7 @@
 package ui;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
@@ -9,6 +10,10 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 public class HomePage extends PageObject {
 
+  public HomePage( WebDriver driver ) {
+    super( driver );
+  }
+  
   @FindBy( xpath = "//button[@id='btnCreateNew']" )
   private WebElementFacade createNewButon;
   @FindBy( xpath = "//iframe[@class='gwt-Frame'][@id='home.perspective']" )
