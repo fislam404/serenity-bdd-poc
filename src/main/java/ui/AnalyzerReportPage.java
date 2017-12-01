@@ -41,7 +41,7 @@ public class AnalyzerReportPage extends PageObject {
     List<WebElementFacade> elements = fieldFieldItems;
 
     for ( WebElementFacade option : elements ) {
-      System.out.println( option.getText() );
+      //System.out.println( option.getText() );
 
       if ( fieldName.contains( option.getText() ) ) {
         withAction().moveToElement( option ).doubleClick().build().perform();
